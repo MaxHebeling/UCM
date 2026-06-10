@@ -12,7 +12,7 @@ export default function Hero() {
       {/* fondo */}
       <div className="absolute inset-0 bg-ucm-gradient opacity-90" />
       <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_85%_-5%,rgba(96,180,216,0.45),transparent)]" />
-      <div className="pointer-events-none absolute -right-24 top-24 hidden lg:block">
+      <div className="pointer-events-none absolute right-6 top-28 hidden lg:block xl:right-16">
         <motion.div
           animate={{ y: [0, -18, 0], rotate: [0, 3, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
