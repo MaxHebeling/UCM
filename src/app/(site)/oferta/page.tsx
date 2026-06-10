@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import ProgramCard from "@/components/ProgramCard";
+import NetflixRow from "@/components/NetflixRow";
 import { programas } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -10,7 +10,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/oferta" },
 };
 
-const niveles = ["Preparatoria", "Licenciatura", "Maestría", "MBA", "Doctorado"] as const;
+const filas: { nivel: string; titulo: string }[] = [
+  { nivel: "Preparatoria", titulo: "Preparatoria" },
+  { nivel: "Licenciatura", titulo: "Licenciaturas" },
+  { nivel: "Maestría", titulo: "Maestrías" },
+  { nivel: "MBA", titulo: "MBA y Alta Dirección" },
+  { nivel: "Doctorado", titulo: "Doctorado" },
+];
 
 export default function OfertaPage() {
   return (
@@ -18,25 +24,16 @@ export default function OfertaPage() {
       <PageHero
         eyebrow="Oferta educativa"
         title={<>Encuentra el programa que <span className="text-ucm-skyLt">transformará tu futuro</span></>}
-        desc="Todos nuestros programas cuentan con Validez Oficial de Estudios (RVOE) ante la SEP."
+        desc="Todos nuestros programas cuentan con Validez Oficial de Estudios (RVOE) ante la SEP. Explora por nivel."
       />
-      <div className="container-ucm py-16 sm:py-20">
-        {niveles.map((nivel) => {
-          const items = programas.filter((p) => p.nivel === nivel);
+      <div className="container-ucm space-y-12 py-16 sm:py-20">
+        {filas.map((f) => {
+          const items = programas.filter((p) => p.nivel === f.nivel);
           if (!items.length) return null;
           return (
-            <div key={nivel} className="mb-14">
-              <Reveal>
-                <h2 className="title-display mb-6 text-2xl text-ucm-navy sm:text-3xl">
-                  {nivel === "MBA" ? "MBA y Alta Dirección" : `${nivel}${nivel === "Licenciatura" || nivel === "Maestría" ? "s" : ""}`}
-                </h2>
-              </Reveal>
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {items.map((p, i) => (
-                  <Reveal key={p.slug} delay={(i % 3) * 0.07}><ProgramCard p={p} /></Reveal>
-                ))}
-              </div>
-            </div>
+            <Reveal key={f.nivel}>
+              <NetflixRow title={f.titulo} items={items} />
+            </Reveal>
           );
         })}
       </div>
