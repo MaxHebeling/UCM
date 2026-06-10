@@ -2,9 +2,10 @@ import Link from "next/link";
 import { GraduationCap } from "lucide-react";
 import { inst } from "@/data/site";
 import TrackLink from "@/components/TrackLink";
+import { localePath, type Locale } from "@/i18n/config";
 
 /** Barra de acción fija inferior, sólo visible en móvil (donde llega la mayoría del tráfico de Ads). */
-export default function StickyCta() {
+export default function StickyCta({ lang = "es" }: { lang?: Locale }) {
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-px border-t border-ucm-navy/10 bg-ucm-navy/10 backdrop-blur sm:hidden">
       <TrackLink
@@ -19,10 +20,10 @@ export default function StickyCta() {
         WhatsApp
       </TrackLink>
       <Link
-        href="/costos-y-becas"
+        href={localePath(lang, "/costos-y-becas")}
         className="flex items-center justify-center gap-2 bg-ucm-navy py-4 text-sm font-bold text-white"
       >
-        <GraduationCap className="h-5 w-5" /> Solicita tu beca
+        <GraduationCap className="h-5 w-5" /> {lang === "en" ? "Get your scholarship" : "Solicita tu beca"}
       </Link>
     </div>
   );

@@ -1,7 +1,10 @@
 import { Star, Quote } from "lucide-react";
-import { testimonios } from "@/data/site";
+import { getTestimonios } from "@/i18n/content";
+import type { Locale } from "@/i18n/config";
 
-function Card({ t }: { t: (typeof testimonios)[number] }) {
+type Testimonio = { name: string; text: string; stars: number };
+
+function Card({ t }: { t: Testimonio }) {
   return (
     <figure className="w-80 shrink-0 rounded-3xl border border-ucm-navy/10 bg-white p-7 shadow-soft">
       <div className="flex items-center justify-between">
@@ -17,7 +20,8 @@ function Card({ t }: { t: (typeof testimonios)[number] }) {
   );
 }
 
-export default function TestimonialMarquee() {
+export default function TestimonialMarquee({ lang = "es" }: { lang?: Locale }) {
+  const testimonios = getTestimonios(lang);
   const row = [...testimonios, ...testimonios];
   return (
     <div className="marquee-pause relative overflow-hidden">

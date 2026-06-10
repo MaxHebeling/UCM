@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Universidad en Tampico con Validez Oficial SEP — UCM",
     description: "Preparatoria, licenciaturas, maestrías y doctorado con RVOE. Modalidad ejecutiva, en línea y presencial en Tampico.",
   },
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { es: "/", en: "/en" } },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight, Clock, ShieldCheck } from "lucide-react";
 import type { Programa } from "@/data/site";
+import { getDict } from "@/i18n/dict";
+import { localePath, type Locale } from "@/i18n/config";
 
 const nivelColor: Record<string, string> = {
   Preparatoria: "bg-ucm-sky/15 text-ucm-blueDk",
@@ -10,9 +12,9 @@ const nivelColor: Record<string, string> = {
   Doctorado: "bg-ucm-navy/90 text-white",
 };
 
-export default function ProgramCard({ p }: { p: Programa }) {
+export default function ProgramCard({ p, lang = "es" }: { p: Programa; lang?: Locale }) {
   return (
-    <Link href={`/oferta/${p.slug}`} className="group card flex flex-col">
+    <Link href={localePath(lang, `/oferta/${p.slug}`)} className="group card flex flex-col">
       <div className="flex items-center justify-between">
         <span className={`rounded-full px-3 py-1 text-xs font-semibold ${nivelColor[p.nivel]}`}>{p.nivel}</span>
         {p.rvoe && (
@@ -28,7 +30,7 @@ export default function ProgramCard({ p }: { p: Programa }) {
           <Clock className="h-4 w-4 text-ucm-sky" /> {p.duracion}
         </div>
         <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-ucm-blue">
-          Ver programa <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          {getDict(lang).common.verPrograma} <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </div>
       </div>
     </Link>
