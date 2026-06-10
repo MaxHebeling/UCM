@@ -1,0 +1,62 @@
+import Link from "next/link";
+import Image from "next/image";
+import { MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
+import { inst, nav, programas } from "@/data/site";
+
+export default function Footer() {
+  return (
+    <footer className="relative overflow-hidden bg-ucm-navyDk text-white">
+      <div className="absolute inset-0 bg-ucm-radial opacity-60" />
+      <div className="container-ucm relative grid gap-10 py-16 md:grid-cols-4">
+        <div className="md:col-span-1">
+          <div className="flex items-center gap-3">
+            <span className="grid h-14 w-14 place-items-center rounded-2xl bg-white">
+              <Image src="/brand/ucm-logo.png" alt="UCM" width={44} height={44} className="object-contain" />
+            </span>
+            <span className="font-display text-lg font-semibold leading-tight">Universidad Cultural<br />Metropolitana</span>
+          </div>
+          <p className="mt-5 text-sm text-white/70">{inst.motto}.</p>
+          <p className="mt-2 text-xs text-white/50">RVOE SEP {inst.rvoe} · CCT {inst.cct}</p>
+          <div className="mt-5 flex gap-3">
+            <a href={inst.facebook} target="_blank" rel="noopener" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-ucm-blue"><Facebook className="h-5 w-5" /></a>
+            <a href={inst.instagram} target="_blank" rel="noopener" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-ucm-blue"><Instagram className="h-5 w-5" /></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-ucm-sky">Navegación</h4>
+          <ul className="space-y-2.5 text-sm text-white/70">
+            {nav.map((n) => (
+              <li key={n.href}><Link href={n.href} className="transition hover:text-white">{n.label}</Link></li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-ucm-sky">Oferta educativa</h4>
+          <ul className="space-y-2.5 text-sm text-white/70">
+            {programas.slice(0, 7).map((p) => (
+              <li key={p.slug}><Link href={`/oferta/${p.slug}`} className="transition hover:text-white">{p.nombre}</Link></li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-ucm-sky">Contacto</h4>
+          <ul className="space-y-3.5 text-sm text-white/70">
+            <li className="flex gap-3"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-ucm-sky" />{inst.address}</li>
+            <li className="flex gap-3"><Phone className="h-5 w-5 shrink-0 text-ucm-sky" /><a href={`tel:${inst.phoneIntl}`} className="hover:text-white">{inst.phone}</a></li>
+            <li className="flex gap-3"><Mail className="h-5 w-5 shrink-0 text-ucm-sky" /><a href={`mailto:${inst.email}`} className="hover:text-white">{inst.email}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="relative border-t border-white/10">
+        <div className="container-ucm flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/50 sm:flex-row">
+          <p>© {new Date().getFullYear()} {inst.legal}. Todos los derechos reservados.</p>
+          <p>Sitio desarrollado por <a href="https://www.ikingdom.org" target="_blank" rel="noopener" className="font-semibold text-gold hover:underline">iKingdom</a> · Digital Growth Architecture</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
