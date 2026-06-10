@@ -16,10 +16,11 @@ export const metadata: Metadata = {
 function DocenteCard({ d, delay }: { d: Docente; delay: number }) {
   return (
     <Reveal delay={delay}>
-      <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-ucm-navy/8 bg-white shadow-soft">
+      <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-ucm-navy/8 bg-white shadow-soft transition hover:shadow-glow">
         {d.foto ? (
-          <div className="relative h-64 w-full bg-ucm-ice">
-            <Image src={d.foto} alt={d.nombre} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+          <div className="relative h-64 w-full overflow-hidden bg-ucm-ice">
+            <Image src={d.foto} alt={d.nombre} fill className="object-cover object-top grayscale transition-all duration-500 ease-out group-hover:scale-105 group-hover:grayscale-0" sizes="(max-width: 768px) 100vw, 33vw" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ucm-navyDk/45 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
           </div>
         ) : (
           <div className="grid h-64 w-full place-items-center bg-ucm-ice text-ucm-blue">

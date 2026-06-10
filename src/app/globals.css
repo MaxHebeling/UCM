@@ -43,3 +43,29 @@ body { @apply bg-white text-ucm-navy antialiased; }
   background-clip: text;
   color: transparent;
 }
+
+/* Marquee infinito (respaldos / testimonios) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee var(--marquee-duration, 32s) linear infinite; }
+.marquee-pause:hover .animate-marquee { animation-play-state: paused; }
+
+/* Aurora animada del hero */
+@keyframes aurora {
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  33%  { transform: translate3d(6%,-4%,0) scale(1.15); }
+  66%  { transform: translate3d(-5%,5%,0) scale(0.95); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+.aurora-blob { animation: aurora 18s ease-in-out infinite; will-change: transform; }
+
+/* Cursor personalizado: ocultar el nativo solo en desktop con puntero fino */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button { cursor: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee, .aurora-blob { animation: none !important; }
+}

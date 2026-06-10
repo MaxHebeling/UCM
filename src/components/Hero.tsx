@@ -28,6 +28,12 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative overflow-hidden bg-ucm-navyDk pt-32 pb-20 text-white sm:pt-40 sm:pb-28">
       <div className="absolute inset-0 bg-ucm-gradient opacity-90" />
+      {/* Aurora animada */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="aurora-blob absolute -left-32 top-0 h-[34rem] w-[34rem] rounded-full bg-ucm-sky/30 blur-[120px]" />
+        <div className="aurora-blob absolute right-0 top-20 h-[30rem] w-[30rem] rounded-full bg-ucm-blue/40 blur-[120px]" style={{ animationDelay: "-6s" }} />
+        <div className="aurora-blob absolute bottom-0 left-1/3 h-[26rem] w-[26rem] rounded-full bg-ucm-skyLt/20 blur-[110px]" style={{ animationDelay: "-12s" }} />
+      </div>
       <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_85%_-5%,rgba(96,180,216,0.45),transparent)]" />
 
       {/* Logo flotante con parallax al hacer scroll */}

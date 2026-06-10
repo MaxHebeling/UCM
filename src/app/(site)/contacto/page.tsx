@@ -15,7 +15,9 @@ export default function Contacto() {
   return (
     <>
       <PageHero
-        eyebrow="Contacto"
+        image="/img/tampico.jpg"
+        imageAlt="Plaza de Armas de Tampico, Tamaulipas"
+        eyebrow="Contacto · Tampico, Tamaulipas"
         title={<>Estamos para <span className="text-ucm-skyLt">acompañarte</span></>}
         desc="Solicita informes y un asesor educativo te contactará para resolver todas tus dudas."
       />

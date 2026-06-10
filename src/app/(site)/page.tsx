@@ -6,6 +6,8 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ProgramCard from "@/components/ProgramCard";
 import VideoBand from "@/components/VideoBand";
+import LogoMarquee from "@/components/LogoMarquee";
+import TestimonialMarquee from "@/components/TestimonialMarquee";
 import { programas, respaldos, testimonios, valores, inst } from "@/data/site";
 
 const ventajas = [
@@ -39,6 +41,12 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* FRANJA DE RESPALDOS (marquee) */}
+      <section className="container-ucm pt-12">
+        <p className="mb-5 text-center text-xs font-semibold uppercase tracking-widest text-ucm-navy/40">Con el respaldo de instituciones de prestigio</p>
+        <LogoMarquee />
+      </section>
+
       {/* VENTAJAS */}
       <section className="container-ucm py-20 sm:py-24">
         <SectionHeading
@@ -46,9 +54,23 @@ export default function Home() {
           title={<>Una universidad hecha para <span className="text-gradient">tu vida real</span></>}
           desc="Calidad académica con la flexibilidad que necesitas para crecer sin pausar tu carrera profesional."
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2">
+          {/* Caja grande: dato destacado */}
+          <Reveal className="sm:col-span-2 lg:row-span-2">
+            <div className="relative flex h-full min-h-[15rem] flex-col justify-between overflow-hidden rounded-3xl bg-ucm-gradient p-8 text-white shadow-glow">
+              <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
+              <div className="relative">
+                <span className="text-xs font-semibold uppercase tracking-widest text-ucm-skyLt">16 años de trayectoria</span>
+                <div className="mt-4 font-display text-6xl font-bold leading-none sm:text-7xl">+{inst.graduates.toLocaleString("es-MX")}</div>
+                <p className="mt-2 max-w-xs text-white/80">Licenciados, Masters y Doctores egresados que hoy transforman la región.</p>
+              </div>
+              <Link href="/nosotros" className="relative mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-ucm-navy">
+                Conoce UCM <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </Reveal>
           {ventajas.map((v, i) => (
-            <Reveal key={v.t} delay={i * 0.08}>
+            <Reveal key={v.t} delay={i * 0.06}>
               <div className="card h-full">
                 <span className="grid h-12 w-12 place-items-center rounded-2xl bg-ucm-ice text-ucm-blue"><v.icon className="h-6 w-6" /></span>
                 <h3 className="mt-5 font-display text-lg font-semibold text-ucm-navy">{v.t}</h3>
@@ -139,21 +161,14 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIOS */}
-      <section className="container-ucm py-20 sm:py-24">
+      <section className="container-ucm pt-20 sm:pt-24">
         <SectionHeading eyebrow="#SomosUCM" center title={<>Lo que dicen <span className="text-gradient">nuestros estudiantes</span></>} />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {testimonios.map((t, i) => (
-            <Reveal key={t.name} delay={(i % 4) * 0.07}>
-              <figure className="card h-full">
-                <Quote className="h-7 w-7 text-ucm-sky" />
-                <div className="mt-3 flex gap-0.5">{Array.from({ length: t.stars }).map((_, k) => <Star key={k} className="h-4 w-4 fill-gold text-gold" />)}</div>
-                <blockquote className="mt-3 text-sm text-ucm-navy/75">“{t.text}”</blockquote>
-                <figcaption className="mt-4 text-sm font-semibold text-ucm-navy">{t.name}</figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal className="mt-10 text-center">
+      </section>
+      <div className="py-10">
+        <TestimonialMarquee />
+      </div>
+      <section className="container-ucm pb-20 text-center sm:pb-24">
+        <Reveal className="text-center">
           <a
             href="https://g.page/UCMTampico"
             target="_blank"
