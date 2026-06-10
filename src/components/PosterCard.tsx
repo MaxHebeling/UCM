@@ -3,6 +3,9 @@ import Link from "next/link";
 import { useRef } from "react";
 import { Scale, Calculator, Briefcase, Globe, BookOpen, GraduationCap, Landmark, FlaskConical, Clock, ShieldCheck, Play, PiggyBank } from "lucide-react";
 import type { Programa } from "@/data/site";
+import { getDict } from "@/i18n/dict";
+import { getPages } from "@/i18n/pages";
+import { localePath, type Locale } from "@/i18n/config";
 
 const grad: Record<string, string> = {
   Preparatoria: "from-ucm-blue to-ucm-sky",
@@ -25,8 +28,10 @@ function iconFor(slug: string, nivel: string) {
   return GraduationCap;
 }
 
-export default function PosterCard({ p }: { p: Programa }) {
+export default function PosterCard({ p, lang = "es" }: { p: Programa; lang?: Locale }) {
   const Icon = iconFor(p.slug, p.nivel);
+  const nivelLabel = getPages(lang).nivel[p.nivel as keyof ReturnType<typeof getPages>["nivel"]] ?? p.nivel;
+  const verPrograma = getDict(lang).common.verPrograma;
   const ref = useRef<HTMLAnchorElement>(null);
 
   const onMove = (e: React.MouseEvent) => {
@@ -42,7 +47,7 @@ export default function PosterCard({ p }: { p: Programa }) {
   return (
     <Link
       ref={ref}
-      href={`/oferta/${p.slug}`}
+      href={localePath(lang, `/oferta/${p.slug}`)}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       className="group relative block aspect-[16/10] w-full overflow-hidden rounded-2xl shadow-soft outline-none ring-ucm-blue/40 transition-[transform,box-shadow] duration-300 ease-out [transform-style:preserve-3d] hover:z-20 hover:shadow-glow focus-visible:ring-2"
@@ -53,7 +58,7 @@ export default function PosterCard({ p }: { p: Programa }) {
 
       <div className="absolute inset-x-0 bottom-0 p-5">
         <div className="flex items-center gap-2">
-          <span className="rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-white ring-1 ring-white/20 backdrop-blur">{p.nivel}</span>
+          <span className="rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-white ring-1 ring-white/20 backdrop-blur">{nivelLabel}</span>
           {p.rvoe && <span className="inline-flex items-center gap-1 text-[11px] font-medium text-ucm-skyLt"><ShieldCheck className="h-3.5 w-3.5" /> RVOE</span>}
         </div>
         <h3 className="mt-2.5 font-display text-lg font-semibold leading-snug text-white drop-shadow">{p.nombre}</h3>
@@ -66,7 +71,7 @@ export default function PosterCard({ p }: { p: Programa }) {
           <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {p.duracion}</span>
         </div>
         <span className="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ucm-navy">
-          <Play className="h-4 w-4 fill-ucm-navy" /> Ver programa
+          <Play className="h-4 w-4 fill-ucm-navy" /> {verPrograma}
         </span>
       </div>
     </Link>

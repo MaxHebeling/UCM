@@ -2,9 +2,10 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Programa } from "@/data/site";
+import type { Locale } from "@/i18n/config";
 import PosterCard from "./PosterCard";
 
-export default function NetflixRow({ title, items }: { title: string; items: Programa[] }) {
+export default function NetflixRow({ title, items, lang = "es" }: { title: string; items: Programa[]; lang?: Locale }) {
   const ref = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: 1 | -1) => {
@@ -33,7 +34,7 @@ export default function NetflixRow({ title, items }: { title: string; items: Pro
       >
         {items.map((p) => (
           <div key={p.slug} className="w-[78%] shrink-0 snap-start sm:w-[20rem]">
-            <PosterCard p={p} />
+            <PosterCard p={p} lang={lang} />
           </div>
         ))}
       </div>
