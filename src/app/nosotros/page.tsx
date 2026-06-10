@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Target, Eye, Heart, ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { inst, valores, stats } from "@/data/site";
+import { inst, valores, stats, identidad } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "¿Quién es UCM? — Nuestra historia y valores",
@@ -26,8 +26,8 @@ export default function Nosotros() {
             <span className="eyebrow">Nuestra historia</span>
             <h2 className="title-display mt-4 text-3xl text-ucm-navy sm:text-4xl">Una institución con <span className="text-gradient">propósito humanista</span></h2>
             <div className="mt-5 space-y-4 text-lg text-ucm-navy/65">
-              <p>Desde {inst.founded}, la Universidad Cultural Metropolitana ofrece planes de estudio actualizados para la educación media superior, superior y de posgrado, enfocados en formar profesionales con sólidos conocimientos y valores humanistas.</p>
-              <p>Con {inst.years} años de trayectoria, la UCM impulsa el desarrollo productivo de la región a través de sus egresados, su claustro docente experimentado y modalidades de estudio flexibles —incluyendo opciones ejecutivas y en línea.</p>
+              <p>{identidad.quienesSomos}</p>
+              <p>Desde {inst.founded}, con {inst.years} años de trayectoria, la UCM impulsa el desarrollo de la región a través de sus egresados, su claustro docente experimentado y modalidades de estudio flexibles —escolarizadas, ejecutivas y en línea.</p>
             </div>
           </Reveal>
           <div className="grid grid-cols-2 gap-4">
@@ -46,8 +46,8 @@ export default function Nosotros() {
       <section className="bg-ucm-ice/60 py-16 sm:py-20">
         <div className="container-ucm grid gap-5 md:grid-cols-3">
           {[
-            { icon: Target, t: "Misión", d: "Formar profesionales competentes y éticos que impulsen el desarrollo productivo del país, con educación de calidad y validez oficial." },
-            { icon: Eye, t: "Visión", d: "Ser la institución líder de la región en formación ejecutiva y en línea, reconocida por la calidad humana y profesional de sus egresados." },
+            { icon: Target, t: "Misión", d: identidad.mision },
+            { icon: Eye, t: "Visión", d: identidad.vision },
             { icon: Heart, t: "Valores", d: "Honestidad, Cultura y Calidad: los tres pilares que guían cada decisión académica y cada relación con nuestra comunidad." },
           ].map((b, i) => (
             <Reveal key={b.t} delay={i * 0.08}>

@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
-import { inst } from "@/data/site";
+import { inst, equipo } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contacto — Solicita informes",
@@ -59,6 +59,30 @@ export default function Contacto() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal className="mt-16">
+          <h2 className="title-display text-2xl text-ucm-navy sm:text-3xl">Atención por área</h2>
+          <p className="mt-2 text-ucm-navy/65">Contacta directamente al área administrativa que necesitas.</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {equipo.map((e) => (
+              <a
+                key={e.area}
+                href={e.href}
+                target={e.tipo === "whatsapp" ? "_blank" : undefined}
+                rel={e.tipo === "whatsapp" ? "noopener" : undefined}
+                className="flex gap-4 rounded-2xl border border-ucm-navy/8 bg-white p-5 shadow-soft transition hover:border-ucm-blue/30"
+              >
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ucm-ice text-ucm-blue">
+                  {e.tipo === "whatsapp" ? <Phone className="h-5 w-5" /> : <Mail className="h-5 w-5" />}
+                </span>
+                <div>
+                  <div className="text-sm font-semibold text-ucm-navy">{e.area}</div>
+                  <div className="text-sm text-ucm-blue">{e.valor}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </Reveal>
       </section>
     </>
   );

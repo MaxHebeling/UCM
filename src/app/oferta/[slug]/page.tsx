@@ -97,7 +97,12 @@ export default async function ProgramaPage({ params }: { params: Promise<{ slug:
               <p className="mt-1 font-display text-2xl font-bold text-ucm-navy">Beca de inscripción</p>
               <p className="text-xs text-ucm-navy/60">Reserva tu lugar este mes</p>
             </div>
-            <a href={inst.whatsapp} target="_blank" rel="noopener" className="btn-primary mt-5 w-full"><GraduationCap className="h-5 w-5" /> Solicitar informes</a>
+            <a href={p.whatsapp ?? inst.whatsapp} target="_blank" rel="noopener" className="btn-primary mt-5 w-full"><GraduationCap className="h-5 w-5" /> Solicitar informes</a>
+            {p.planEstudios && (
+              <Link href={p.planEstudios} className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-ucm-navy/15 bg-white p-3.5 text-sm font-semibold text-ucm-navy transition hover:border-ucm-blue/40">
+                <BookOpen className="h-4 w-4" /> Ver plan de estudios
+              </Link>
+            )}
             <Link href="/admisiones" className="btn-ghost mt-3 w-full">Ver proceso de admisión</Link>
           </div>
         </aside>

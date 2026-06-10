@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, Star, Quote, BadgeCheck, Laptop, CalendarClock, Award, Building2 } from "lucide-react";
+import { ArrowRight, Star, Quote, BadgeCheck, Laptop, CalendarClock, Award } from "lucide-react";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -18,6 +19,24 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      {/* REFERIDOS BANNER */}
+      <section className="container-ucm pt-10">
+        <Reveal>
+          <Link
+            href="/referidos"
+            className="flex flex-col items-start justify-between gap-3 rounded-3xl bg-ucm-navyDk p-6 text-white shadow-glow transition hover:bg-ucm-navy sm:flex-row sm:items-center sm:p-7"
+          >
+            <div>
+              <div className="font-display text-lg font-semibold">Programa de beneficios por referidos UCM</div>
+              <p className="mt-1 text-sm text-white/70">Recomienda UCM y obtén mensualidades gratis, descuentos en titulación o bonificaciones directas.</p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-ucm-navy">
+              Leer más <ArrowRight className="h-4 w-4" />
+            </span>
+          </Link>
+        </Reveal>
+      </section>
 
       {/* VENTAJAS */}
       <section className="container-ucm py-20 sm:py-24">
@@ -90,7 +109,9 @@ export default function Home() {
             {respaldos.map((r, i) => (
               <Reveal key={r.name} delay={(i % 3) * 0.08}>
                 <div className="h-full rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur">
-                  <Building2 className="h-7 w-7 text-ucm-skyLt" />
+                  <div className="flex h-16 items-center rounded-xl bg-white px-4">
+                    <Image src={r.logo} alt={`Logotipo ${r.name}`} width={262} height={92} className="h-11 w-auto max-w-full object-contain" />
+                  </div>
                   <h3 className="mt-4 font-semibold text-white">{r.name}</h3>
                   <p className="mt-2 text-sm text-white/65">{r.detail}</p>
                 </div>

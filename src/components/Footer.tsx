@@ -29,6 +29,8 @@ export default function Footer() {
             {nav.map((n) => (
               <li key={n.href}><Link href={n.href} className="transition hover:text-white">{n.label}</Link></li>
             ))}
+            <li><Link href="/referidos" className="transition hover:text-white">Beneficios por referidos</Link></li>
+            <li><Link href="/aviso-de-privacidad" className="transition hover:text-white">Aviso de privacidad</Link></li>
           </ul>
         </div>
 

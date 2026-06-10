@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Building2, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { ShieldCheck, ExternalLink } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { respaldos, inst } from "@/data/site";
@@ -23,12 +24,26 @@ export default function Respaldos() {
         <div className="grid gap-5 md:grid-cols-2">
           {respaldos.map((r, i) => (
             <Reveal key={r.name} delay={(i % 2) * 0.08}>
-              <div className="flex h-full gap-5 rounded-3xl border border-ucm-navy/8 bg-white p-7 shadow-soft">
-                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-ucm-ice text-ucm-blue"><Building2 className="h-7 w-7" /></span>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-ucm-navy">{r.name}</h3>
-                  <p className="mt-2 text-sm text-ucm-navy/65">{r.detail}</p>
+              <div className="flex h-full flex-col rounded-3xl border border-ucm-navy/8 bg-white p-7 shadow-soft">
+                <div className="flex h-20 items-center">
+                  <Image
+                    src={r.logo}
+                    alt={`Logotipo ${r.name}`}
+                    width={262}
+                    height={92}
+                    className="h-16 w-auto max-w-[240px] object-contain"
+                  />
                 </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-ucm-navy">{r.name}</h3>
+                <p className="mt-2 flex-1 text-sm text-ucm-navy/65">{r.detail}</p>
+                <a
+                  href={r.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ucm-blue hover:underline"
+                >
+                  Verificar en la fuente oficial <ExternalLink className="h-3.5 w-3.5" />
+                </a>
               </div>
             </Reveal>
           ))}
