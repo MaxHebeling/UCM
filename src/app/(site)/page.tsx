@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ProgramCard from "@/components/ProgramCard";
+import VideoBand from "@/components/VideoBand";
 import { programas, respaldos, testimonios, valores, inst } from "@/data/site";
 
 const ventajas = [
@@ -113,6 +114,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FRANJA CON VIDEO — POSGRADOS */}
+      <VideoBand />
 
       {/* RESPALDOS */}
       <section className="bg-ucm-navyDk py-20 text-white sm:py-24">
