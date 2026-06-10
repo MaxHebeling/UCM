@@ -29,6 +29,37 @@ export default async function ProgramaPage({ params }: { params: Promise<{ slug:
   const related = programas.filter((x) => x.nivel === p.nivel && x.slug !== p.slug).slice(0, 3);
   const fallback = related.length ? related : programas.filter((x) => x.slug !== p.slug).slice(0, 3);
 
+  const faqs = [
+    {
+      q: `¿${p.nivel === "Preparatoria" ? "La Preparatoria UCM" : `Este programa`} tiene validez oficial?`,
+      a: p.nivel === "Preparatoria"
+        ? "Sí. La Preparatoria UCM está incorporada a la Universidad Autónoma de Tamaulipas (Media Superior No. 44) como Bachillerato General Único."
+        : `Sí. Cuenta con Reconocimiento de Validez Oficial de Estudios (RVOE) ante la SEP, con CCT ${inst.cct}. Puedes verificarlo en el sistema SIRVOES de la Secretaría de Educación Pública.`,
+    },
+    {
+      q: "¿Cuánto dura y en qué modalidad se imparte?",
+      a: `Tiene una duración de ${p.duracion.toLowerCase()}, en modalidad ${p.modalidad.toLowerCase()}, diseñada para que puedas estudiar sin descuidar tu trabajo o tus actividades.`,
+    },
+    {
+      q: "¿Hay becas disponibles?",
+      a: "Sí. UCM ofrece beca de inscripción de hasta 50% al reservar tu lugar dentro del mes, beca en mensualidad durante toda la carrera en periodo de promoción, y becas empresariales por convenio. Pregunta por la promoción vigente.",
+    },
+    {
+      q: "¿Cómo me inscribo?",
+      a: `Solicita informes por WhatsApp o el formulario de contacto; un asesor educativo te guía en el proceso. Los requisitos básicos incluyen solicitud de inscripción, acta de nacimiento, CURP y ${p.nivel === "Preparatoria" ? "certificado de secundaria" : p.nivel === "Licenciatura" ? "certificado de preparatoria o equivalente" : "certificado, título y cédula de licenciatura"}.`,
+    },
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -42,6 +73,7 @@ export default async function ProgramaPage({ params }: { params: Promise<{ slug:
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <PageHero eyebrow={p.nivel} title={p.nombre} desc={p.resumen} />
 
       <div className="container-ucm grid gap-12 py-16 sm:py-20 lg:grid-cols-3">
@@ -81,6 +113,22 @@ export default async function ProgramaPage({ params }: { params: Promise<{ slug:
               </div>
             </Reveal>
           ) : null}
+
+          {/* FAQ */}
+          <Reveal className="mt-12">
+            <h3 className="font-display text-xl font-semibold text-ucm-navy">Preguntas frecuentes</h3>
+            <div className="mt-4 space-y-3">
+              {faqs.map((f) => (
+                <details key={f.q} className="group rounded-2xl border border-ucm-navy/8 bg-white p-5 shadow-soft">
+                  <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-ucm-navy">
+                    {f.q}
+                    <span className="ml-4 text-ucm-blue transition group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm text-ucm-navy/70">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </Reveal>
         </div>
 
         {/* sidebar */}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Scale, Briefcase, GraduationCap, ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
@@ -15,16 +16,24 @@ export const metadata: Metadata = {
 function DocenteCard({ d, delay }: { d: Docente; delay: number }) {
   return (
     <Reveal delay={delay}>
-      <div className="flex h-full flex-col rounded-3xl border border-ucm-navy/8 bg-white p-7 shadow-soft">
-        <span className="grid h-12 w-12 place-items-center rounded-2xl bg-ucm-ice text-ucm-blue">
-          <GraduationCap className="h-6 w-6" />
-        </span>
-        <h3 className="mt-5 font-display text-lg font-semibold text-ucm-navy">{d.nombre}</h3>
-        <p className="mt-2 flex-1 text-sm text-ucm-navy/65">{d.bio}</p>
-        <p className="mt-4 rounded-2xl bg-ucm-ice/60 p-3 text-xs font-medium text-ucm-navy/75">
-          <span className="font-semibold text-ucm-blue">Puesto actual: </span>
-          {d.puesto}
-        </p>
+      <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-ucm-navy/8 bg-white shadow-soft">
+        {d.foto ? (
+          <div className="relative h-64 w-full bg-ucm-ice">
+            <Image src={d.foto} alt={d.nombre} fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 33vw" />
+          </div>
+        ) : (
+          <div className="grid h-64 w-full place-items-center bg-ucm-ice text-ucm-blue">
+            <GraduationCap className="h-16 w-16" />
+          </div>
+        )}
+        <div className="flex flex-1 flex-col p-7">
+          <h3 className="font-display text-lg font-semibold text-ucm-navy">{d.nombre}</h3>
+          <p className="mt-2 flex-1 text-sm text-ucm-navy/65">{d.bio}</p>
+          <p className="mt-4 rounded-2xl bg-ucm-ice/60 p-3 text-xs font-medium text-ucm-navy/75">
+            <span className="font-semibold text-ucm-blue">Puesto actual: </span>
+            {d.puesto}
+          </p>
+        </div>
       </div>
     </Reveal>
   );

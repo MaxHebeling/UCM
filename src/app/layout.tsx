@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import { inst } from "@/data/site";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppFab from "@/components/WhatsAppFab";
 
 const sans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const display = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap" });
@@ -52,14 +50,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     },
     identifier: { "@type": "PropertyValue", propertyID: "RVOE", value: inst.rvoe },
   };
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
   return (
     <html lang="es-MX" className={`${sans.variable} ${display.variable}`}>
       <body>
+        {gtmId && (
+          <>
+            <Script id="gtm" strategy="afterInteractive">
+              {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`}
+            </Script>
+            <noscript>
+              <iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" style={{ display: "none", visibility: "hidden" }} />
+            </noscript>
+          </>
+        )}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppFab />
+        {children}
       </body>
     </html>
   );

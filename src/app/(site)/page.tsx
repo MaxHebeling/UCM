@@ -58,6 +58,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* QUIZ */}
+      <section className="container-ucm pb-4">
+        <Reveal>
+          <Link href="/encuentra-tu-programa" className="flex flex-col items-start justify-between gap-3 rounded-3xl border-2 border-dashed border-ucm-blue/30 bg-ucm-ice/50 p-6 transition hover:border-ucm-blue sm:flex-row sm:items-center sm:p-7">
+            <div>
+              <div className="font-display text-lg font-semibold text-ucm-navy">¿No sabes qué estudiar? Descúbrelo en 30 segundos</div>
+              <p className="mt-1 text-sm text-ucm-navy/60">Responde 4 preguntas y te recomendamos el programa exacto para tu momento de vida.</p>
+            </div>
+            <span className="btn-primary shrink-0">Hacer el quiz <ArrowRight className="h-4 w-4" /></span>
+          </Link>
+        </Reveal>
+      </section>
+
       {/* PROGRAMAS DESTACADOS */}
       <section className="bg-ucm-ice/60 py-20 sm:py-24">
         <div className="container-ucm">
@@ -136,6 +149,16 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="mt-10 text-center">
+          <a
+            href="https://g.page/UCMTampico"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 rounded-2xl border border-ucm-navy/15 bg-white px-6 py-3.5 text-sm font-semibold text-ucm-navy shadow-soft transition hover:border-ucm-blue/40"
+          >
+            <Star className="h-4 w-4 fill-gold text-gold" /> Ver todas las reseñas en Google
+          </a>
+        </Reveal>
       </section>
 
       {/* CTA FINAL */}

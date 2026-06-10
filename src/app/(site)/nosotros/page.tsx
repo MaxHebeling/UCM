@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Target, Eye, Heart, ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
 import { inst, valores, stats, identidad } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function Nosotros() {
             {stats.map((s, i) => (
               <Reveal key={s.label} delay={i * 0.08}>
                 <div className="rounded-3xl border border-ucm-navy/8 bg-white p-7 text-center shadow-soft">
-                  <div className="font-display text-4xl font-bold text-gradient">{s.value}</div>
+                  <div className="font-display text-4xl font-bold text-gradient"><CountUp value={s.value} /></div>
                   <div className="mt-2 text-sm text-ucm-navy/60">{s.label}</div>
                 </div>
               </Reveal>

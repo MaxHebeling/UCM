@@ -302,41 +302,49 @@ export type Docente = {
   nombre: string;
   bio: string;
   puesto: string;
+  foto?: string;
 };
 
 export const claustroMJO: Docente[] = [
   {
     nombre: "Dra. Reyna Karina Torres Barrientos",
+    foto: "/claustro/reyna-torres.jpg",
     bio: "Jurista con amplia trayectoria en el sistema de justicia penal acusatorio en Tamaulipas, especialista en litigación oral y justicia para adolescentes. Conferencista en más de 40 eventos nacionales y formadora clave en la implementación del nuevo sistema penal en el estado.",
     puesto: "Jueza de Control del Poder Judicial del Estado de Tamaulipas",
   },
   {
     nombre: "Dr. José Arturo Córdova Godínez",
+    foto: "/claustro/arturo-cordova.jpg",
     bio: "Abogado y juez con doctorados en Derecho Penal y Ciencias de la Educación, y maestrías en Derecho Procesal Penal y Administración Educativa. Docente en la UAT con cargos relevantes en el Poder Judicial de Tamaulipas.",
     puesto: "Juez de Control de la Sexta Región del Segundo Distrito Judicial, Altamira",
   },
   {
     nombre: "Lic. Eduardo Ataulfo Rodríguez Álvarez",
+    foto: "/claustro/eduardo-rodriguez.jpg",
     bio: "Abogado por la UAT con maestría en Amparo por la Escuela Federal de Formación Judicial. Amplia experiencia en el Poder Judicial de la Federación como secretario de tribunales colegiados y juez en diferentes sedes.",
     puesto: "Titular del Juzgado Noveno de Distrito en el Estado de Tamaulipas",
   },
   {
     nombre: "Lic. Ayerim Guillén Hernández",
+    foto: "/claustro/ayerim-guillen.jpg",
     bio: "Abogada por la UAT con maestría en Derecho Procesal Penal. Carrera completa en el Poder Judicial de Tamaulipas, desde oficial judicial hasta juez de primera instancia en juzgados civiles y familiares.",
     puesto: "Juez de Primera Instancia, Juzgado Primero Civil, Altamira",
   },
   {
     nombre: "Dr. Sergio Arturo Arjona",
+    foto: "/claustro/sergio-arjona.jpg",
     bio: "Carrera judicial sólida en Tamaulipas: agente del Ministerio Público investigador, juez menor y juez de primera instancia penal. Amplio conocimiento del proceso penal acusatorio y las reformas constitucionales.",
     puesto: "Juez de Control de la Sexta Región del Segundo Distrito Judicial, Altamira",
   },
   {
     nombre: "Dra. Lourdes Guadalupe Ávila Tovías",
+    foto: "/claustro/lourdes-avila.jpg",
     bio: "Trayectoria en el Poder Judicial de la Federación en juzgados y tribunales colegiados del Décimo Noveno Circuito. Especialidad en Derecho del Trabajo y Justicia Laboral y maestría en Derecho Constitucional.",
     puesto: "Magistrada del Tercer Tribunal Colegiado en Materias Penal y de Trabajo del Décimo Noveno Circuito",
   },
   {
     nombre: "Dr. José Luis Cruz Fuentes",
+    foto: "/claustro/jose-cruz.jpg",
     bio: "Doctor en Desarrollo Educativo con sólida formación jurídica y más de dos décadas en la Comisión de Derechos Humanos del Estado. Ex coordinador de posgrado y profesor de carrera en la Facultad de Derecho de la UAT.",
     puesto: "Titular de la Visitaduría General Zona Sur, Comisión de Derechos Humanos de Tamaulipas",
   },
@@ -345,41 +353,49 @@ export const claustroMJO: Docente[] = [
 export const claustroMADAN: Docente[] = [
   {
     nombre: "Dra. Amparo González Morales",
+    foto: "/claustro/amparo-gonzalez.jpg",
     bio: "Más de 22 años como profesora universitaria y 14 en posgrado, en administración, dirección educativa y psicología organizacional. Certificación CONOCER en formación de capital humano, liderazgo y desarrollo de competencias.",
     puesto: "Profesora de posgrado; expositora internacional y diseñadora de diplomados bilingües para la Embajada de Estados Unidos",
   },
   {
     nombre: "Ing. Javier González Padilla",
+    foto: "/claustro/javier-gonzalez.jpg",
     bio: "Líder de proyectos EPCI en petróleo, gas y energía eólica, con sistemas de gestión de calidad, auditorías ISO y desarrollo de software especializado. Consultor e instructor en calidad, ERP y liderazgo empresarial.",
     puesto: "Gerente Funcional de Calidad, McDermott International Inc., Altamira",
   },
   {
     nombre: "Lic. Abril Segovia Flores",
+    foto: "/claustro/abril-segovia.jpg",
     bio: "Estratega comercial de franquicias internacionales como Domino's Pizza®, Dairy Queen® y Carl's Jr®, con posicionamientos nacionales en ventas. Especialista en mercadotecnia, gestión de imagen y relaciones públicas.",
     puesto: "Directora de \"Pasión por el Cliente\", Grupo Kuale, Tampico",
   },
   {
     nombre: "Dra. Liliana Rocha Esquivel",
+    foto: "/claustro/liliana-rocha.jpg",
     bio: "Experiencia en comercio exterior, logística y normatividad aduanera en agencias aduanales, con liderazgo en sistemas ISO. Maestría en Administración de Negocios con enfoque en calidad y productividad.",
     puesto: "Profesora de posgrado en programas de Maestría y Doctorado",
   },
   {
     nombre: "Dr. Edgar Dueñas Guzmán",
+    foto: "/claustro/edgar-duenas.jpg",
     bio: "Más de 20 años en puestos gerenciales y directivos y una década formando líderes. Conferencista, coach y formador internacional en liderazgo con visión humanista.",
     puesto: "Coordinación País México, Fundación Maxwell · Coach Internacional en Liderazgo",
   },
   {
     nombre: "Dr. Jorge Alberto Pérez Cruz",
+    foto: "/claustro/jorge-perez.jpg",
     bio: "Profesor-investigador con más de 20 años en docencia, investigación y consultoría en desarrollo socioeconómico y políticas públicas, con foco en desigualdad y desarrollo regional.",
     puesto: "Director de la Unidad de Evaluación de Políticas Públicas y Perito en Economía del Consejo de la Judicatura Federal",
   },
   {
     nombre: "Dr. Edgar González Palacios",
+    foto: "/claustro/edgar-gonzalez.jpg",
     bio: "Economista con 23 años de experiencia en precios de transferencia y valuación financiera, con trayectoria en firmas Big Four atendiendo grupos multinacionales en Latinoamérica.",
     puesto: "Socio de Precios de Transferencia en Russell Bedford",
   },
   {
     nombre: "Lic. Diana Martínez Rivas",
+    foto: "/claustro/diana-martinez.jpg",
     bio: "Estratega empresarial con Maestría en Calidad Total y más de 10 años en creación de negocios e incubación. Conferencista en finanzas, liderazgo e innovación.",
     puesto: "Directora de Desarrollo Económico de Ciudad Madero y de la primera Incubadora Municipal en Tamaulipas",
   },

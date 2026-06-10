@@ -2,15 +2,17 @@
 import { useState } from "react";
 import { Send, Check } from "lucide-react";
 import { inst, programas } from "@/data/site";
+import { track } from "@/lib/track";
 
-export default function ContactForm() {
+export default function ContactForm({ defaultPrograma = "", origen = "contacto" }: { defaultPrograma?: string; origen?: string }) {
   const [sent, setSent] = useState(false);
-  const [data, setData] = useState({ nombre: "", email: "", tel: "", programa: "", msg: "" });
+  const [data, setData] = useState({ nombre: "", email: "", tel: "", programa: defaultPrograma, msg: "" });
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
     // Envía la solicitud por WhatsApp con el contexto del prospecto
     const text = `Hola UCM, soy ${data.nombre}. Me interesa: ${data.programa || "informes generales"}.%0ATel: ${data.tel}%0AEmail: ${data.email}%0A${data.msg}`;
+    track("generate_lead", { programa: data.programa || "Informes generales", origen });
     window.open(`https://wa.me/${inst.phoneIntl.replace("+", "")}?text=${text}`, "_blank");
     setSent(true);
   }

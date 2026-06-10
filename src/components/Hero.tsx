@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShieldCheck, GraduationCap, ArrowRight, Sparkles } from "lucide-react";
 import { inst, stats } from "@/data/site";
+import CountUp from "@/components/CountUp";
 
 export default function Hero() {
   return (
@@ -67,7 +68,7 @@ export default function Hero() {
         >
           {stats.map((s) => (
             <div key={s.label} className="rounded-2xl bg-white/10 p-5 ring-1 ring-white/15 backdrop-blur">
-              <div className="font-display text-3xl font-semibold text-white sm:text-4xl">{s.value}</div>
+              <div className="font-display text-3xl font-semibold text-white sm:text-4xl"><CountUp value={s.value} /></div>
               <div className="mt-1 text-xs text-white/65">{s.label}</div>
             </div>
           ))}
