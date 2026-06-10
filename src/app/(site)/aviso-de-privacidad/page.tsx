@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Política de privacidad",
   description:
     "Conoce cómo protegemos tu información en UCM. Nuestras Políticas de Privacidad garantizan la seguridad y el uso responsable de tus datos personales. Transparencia y confianza en cada interacción.",
-  alternates: { canonical: "/aviso-de-privacidad" },
+  alternates: { canonical: "/aviso-de-privacidad", languages: { es: "/aviso-de-privacidad", en: "/en/aviso-de-privacidad" } },
 };
 
 // Texto migrado literalmente de ucmac.edu.mx/general-5
