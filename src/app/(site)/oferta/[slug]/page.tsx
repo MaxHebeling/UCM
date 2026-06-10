@@ -15,9 +15,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const p = programas.find((x) => x.slug === slug);
   if (!p) return {};
+  const desc = `${p.nombre}${p.rvoe ? " con RVOE" : ""} en UCM Tampico. ${p.modalidad}. Solicita informes y conoce becas.`;
   return {
-    title: `${p.nombre} en Tampico ${p.rvoe ? "(RVOE)" : ""}`.trim(),
-    description: `${p.resumen} Modalidad: ${p.modalidad}. Duración: ${p.duracion}. Con Validez Oficial SEP en la UCM, Tampico.`,
+    title: `${p.nombre} en Tampico`,
+    description: desc.length > 158 ? desc.slice(0, 155).trimEnd() + "…" : desc,
     alternates: { canonical: `/oferta/${p.slug}` },
   };
 }
@@ -67,13 +68,30 @@ export default async function ProgramaPage({ params }: { params: Promise<{ slug:
     description: p.resumen,
     educationalCredentialAwarded: p.nivel,
     provider: { "@type": "CollegeOrUniversity", name: inst.legal, sameAs: "https://www.ucmac.edu.mx" },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: ["online", "onsite"],
+      courseWorkload: p.duracion,
+      location: { "@type": "Place", name: "UCM Tampico", address: { "@type": "PostalAddress", addressLocality: "Tampico", addressRegion: "Tamaulipas", addressCountry: "MX" } },
+    },
     ...(p.rvoe ? { identifier: { "@type": "PropertyValue", propertyID: "RVOE", value: inst.rvoe } } : {}),
+  };
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.ucmac.edu.mx/" },
+      { "@type": "ListItem", position: 2, name: "Oferta educativa", item: "https://www.ucmac.edu.mx/oferta" },
+      { "@type": "ListItem", position: 3, name: p.nombre, item: `https://www.ucmac.edu.mx/oferta/${p.slug}` },
+    ],
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <PageHero eyebrow={p.nivel} title={p.nombre} desc={p.resumen} />
 
       <div className="container-ucm grid gap-12 py-16 sm:py-20 lg:grid-cols-3">
