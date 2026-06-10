@@ -10,6 +10,16 @@
 html { scroll-behavior: smooth; }
 body { @apply bg-white text-ucm-navy antialiased; }
 
+/* Texto de párrafos justificado en todo el sitio (los .text-center utilitarios lo sobreescriben) */
+@layer base {
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+}
+
 ::selection { background: #0C78B4; color: #fff; }
 
 /* Scrollbar */
