@@ -22,9 +22,11 @@ export default function OfertaPage() {
   return (
     <>
       <PageHero
+        image="/img/graduacion.jpg"
+        imageAlt="Egresados de la Universidad Cultural Metropolitana en su graduación"
         eyebrow="Oferta educativa"
         title={<>Encuentra el programa que <span className="text-ucm-skyLt">transformará tu futuro</span></>}
-        desc="Todos nuestros programas cuentan con Validez Oficial de Estudios (RVOE) ante la SEP. Explora por nivel."
+        desc="Preparatoria, licenciaturas, maestrías, MBA y doctorado — todos con Validez Oficial de Estudios (RVOE) ante la SEP. Explora por nivel."
       />
       <div className="container-ucm space-y-12 py-16 sm:py-20">
         {filas.map((f) => {
