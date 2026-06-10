@@ -6,7 +6,10 @@ import { inst, nav, programas } from "@/data/site";
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-ucm-navyDk text-white">
-      <div className="absolute inset-0 bg-ucm-radial opacity-60" />
+      {/* Fondo: Puente Tampico */}
+      <Image src="/img/puente-tampico.jpg" alt="" fill className="object-cover object-bottom opacity-30" sizes="100vw" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ucm-navyDk via-ucm-navyDk/90 to-ucm-navyDk/80" />
+      <div className="absolute inset-0 bg-ucm-radial opacity-50" />
       <div className="container-ucm relative grid gap-10 py-16 md:grid-cols-4">
         <div className="md:col-span-1">
           <div className="flex items-center gap-3">
@@ -59,6 +62,9 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} {inst.legal}. Todos los derechos reservados.</p>
           <p>Sitio desarrollado por <a href="https://www.ikingdom.org" target="_blank" rel="noopener" className="font-semibold text-gold hover:underline">iKingdom</a> · Digital Growth Architecture</p>
         </div>
+        <p className="container-ucm pb-4 text-center text-[10px] text-white/30 sm:text-right">
+          Foto Puente Tampico: Gabriel Carranza Olguin · <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener" className="hover:underline">CC BY-SA 3.0</a>
+        </p>
       </div>
     </footer>
   );
