@@ -107,6 +107,13 @@ export const programasEN: Programa[] = [
     beneficios: ["Focus on the port region", "Logistics and customs", "High-demand career", "Official SEP recognition"],
   },
   {
+    slug: "licenciatura-en-banca-y-finanzas", nivel: "Licenciatura", nombre: "Bachelor's in Banking & Finance",
+    resumen: "Specialists in the financial system, banking, investment and capital management, ready to lead the finances of individuals and organizations.",
+    modalidad: "Executive · hybrid · weekends and weekdays", duracion: "9 quarters", rvoe: true,
+    salidas: ["Financial analyst", "Banking & credit", "Investment advisor", "Chief financial officer"],
+    beneficios: ["Comprehensive financial training", "Flexible executive format", "Fully up-to-date program", "Official SEP recognition"],
+  },
+  {
     slug: "licenciatura-en-pedagogia", nivel: "Licenciatura", nombre: "Bachelor's Degrees in Pedagogy",
     resumen: "Trains specialized teachers and counselors: Mathematics, Spanish, English, Social Sciences, Natural Sciences, Guidance and Educational Development.",
     modalidad: "Online · executive", duracion: "9 quarters", rvoe: true,
@@ -126,7 +133,22 @@ export const programasEN: Programa[] = [
     beneficios: ["Educational management and leadership", "Executive schedules", "USICAMM scoring", "Official SEP recognition"],
   },
   {
-    slug: "mba", nivel: "MBA", nombre: "MBA · Master's in Executive Management & Business",
+    slug: "maestria-en-juicios-orales", nivel: "Maestría", nombre: "Master's in Oral Trials",
+    resumen: "Specialize in the justice system and become an expert in oral litigation: master litigation techniques, legal argumentation and human rights, with a faculty of prominent Judiciary judges.",
+    modalidad: "Executive · weekends · Graduate Center", duracion: "6 quarters", rvoe: true, destacado: true,
+    areas: ["Oral litigation", "Legal argumentation", "Human rights", "Adversarial criminal system"],
+    beneficios: ["A practical, strategic approach to every stage of the oral trial", "Faculty made up of Judiciary judges", "Weekend format for working professionals", "Corporate scholarships: -50% enrollment and -20% per course"],
+  },
+  {
+    slug: "maestria-en-diseno-y-comunicacion-digital", nivel: "Maestría", nombre: "Master's in Digital Design & Communication",
+    resumen: "Master the design, content and digital strategies brands need today: branding, UX, social media, audiovisual and campaigns that communicate and sell.",
+    modalidad: "Executive · online · weekends", duracion: "6 quarters", rvoe: true, destacado: true,
+    areas: ["Digital design", "Branding & UX", "Content marketing", "Audiovisual production"],
+    salidas: ["Creative director", "Brand strategist", "Social media manager", "UX/UI designer"],
+    beneficios: ["A professional portfolio with real projects from the first quarter", "Current industry tools and trends", "Online and weekend format for working professionals", "Official SEP recognition"],
+  },
+  {
+    slug: "mba", nivel: "MBA", nombre: "MADAN · Master's in Executive Management & Business",
     resumen: "An executive top-management program with first-rate strategic partners. Shapes business leaders with a global outlook.",
     modalidad: "Executive · online", duracion: "5 quarters", rvoe: true, destacado: true,
     beneficios: ["Strategic business alliances", "Focus on top management", "Executive networking", "Official SEP recognition"],

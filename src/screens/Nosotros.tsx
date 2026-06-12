@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
 import { inst } from "@/data/site";
+import Diferenciadores from "@/components/Diferenciadores";
 import { getValores, getStats, getIdentidad } from "@/i18n/content";
 import { getPages } from "@/i18n/pages";
 import { localePath, type Locale } from "@/i18n/config";
@@ -56,6 +57,8 @@ export default function Nosotros({ lang = "es" }: { lang?: Locale }) {
           ))}
         </div>
       </section>
+
+      <Diferenciadores lang={lang} />
 
       <section className="container-ucm py-16 sm:py-20">
         <div className="grid gap-4 sm:grid-cols-3">

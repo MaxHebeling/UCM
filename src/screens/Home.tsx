@@ -8,15 +8,20 @@ import ProgramCard from "@/components/ProgramCard";
 import VideoBand from "@/components/VideoBand";
 import LogoMarquee from "@/components/LogoMarquee";
 import TestimonialMarquee from "@/components/TestimonialMarquee";
+import Diferenciadores from "@/components/Diferenciadores";
+import ProfesionistasBand from "@/components/ProfesionistasBand";
+import OfertaSecundaria from "@/components/OfertaSecundaria";
 import { inst } from "@/data/site";
 import { getProgramas, getRespaldos, getValores } from "@/i18n/content";
 import { getDict } from "@/i18n/dict";
+import { getMarketing } from "@/i18n/marketing";
 import { localePath, type Locale } from "@/i18n/config";
 
 export default function Home({ lang = "es" }: { lang?: Locale }) {
   const t = getDict(lang);
   const d = t.home;
   const c = t.common;
+  const m = getMarketing(lang);
   const p = (path: string) => localePath(lang, path);
   const programas = getProgramas(lang);
   const respaldos = getRespaldos(lang);
@@ -53,6 +58,15 @@ export default function Home({ lang = "es" }: { lang?: Locale }) {
         <LogoMarquee />
       </section>
 
+      {/* TAGLINE — media kit */}
+      <section className="container-ucm pt-16">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <span className="mx-auto block h-px w-16 bg-gold" />
+          <p className="mt-6 font-display text-2xl italic leading-snug text-ucm-navy sm:text-3xl">{m.tagline}</p>
+          <span className="mx-auto mt-6 block h-px w-16 bg-gold" />
+        </Reveal>
+      </section>
+
       {/* VENTAJAS (bento) */}
       <section className="container-ucm py-20 sm:py-24">
         <SectionHeading eyebrow={d.whyEyebrow} title={<>{d.whyTitleA}<span className="text-gradient">{d.whyTitleB}</span></>} desc={d.whyDesc} />
@@ -80,8 +94,11 @@ export default function Home({ lang = "es" }: { lang?: Locale }) {
         </div>
       </section>
 
+      {/* DIFERENCIADORES */}
+      <Diferenciadores lang={lang} />
+
       {/* QUIZ */}
-      <section className="container-ucm pb-4">
+      <section className="container-ucm pb-4 pt-20 sm:pt-24">
         <Reveal>
           <Link href={p("/encuentra-tu-programa")} className="flex flex-col items-start justify-between gap-3 rounded-3xl border-2 border-dashed border-ucm-blue/30 bg-ucm-ice/50 p-6 transition hover:border-ucm-blue sm:flex-row sm:items-center sm:p-7">
             <div>
@@ -105,6 +122,9 @@ export default function Home({ lang = "es" }: { lang?: Locale }) {
           </div>
         </div>
       </section>
+
+      {/* PROFESIONISTAS EN ACTIVO — motivaciones de compra */}
+      <ProfesionistasBand lang={lang} />
 
       {/* VALORES / MOTTO */}
       <section className="container-ucm py-20 sm:py-24">
@@ -132,6 +152,9 @@ export default function Home({ lang = "es" }: { lang?: Locale }) {
       </section>
 
       <VideoBand lang={lang} />
+
+      {/* OFERTA SECUNDARIA — diplomados, cursos, certificaciones */}
+      <OfertaSecundaria lang={lang} />
 
       {/* RESPALDOS */}
       <section className="bg-ucm-navyDk py-20 text-white sm:py-24">
