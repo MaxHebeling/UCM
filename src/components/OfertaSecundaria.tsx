@@ -1,4 +1,4 @@
-import { ScrollText, BookOpenCheck, BadgeCheck } from "lucide-react";
+import { ScrollText, BookOpenCheck, BadgeCheck, Download } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { getMarketing } from "@/i18n/marketing";
@@ -25,6 +25,15 @@ export default function OfertaSecundaria({ lang = "es" }: { lang?: Locale }) {
           );
         })}
       </div>
+      <Reveal className="mt-8">
+        <div className="flex flex-col items-start justify-between gap-4 rounded-3xl border border-ucm-navy/10 bg-ucm-ice/50 p-7 sm:flex-row sm:items-center">
+          <div>
+            <h3 className="font-display text-lg font-semibold text-ucm-navy">{m.brochureT}</h3>
+            <p className="mt-1 text-sm text-ucm-navy/65">{m.brochureD}</p>
+          </div>
+          <a href="/brochure-ucm.pdf" target="_blank" rel="noopener" className="btn-primary shrink-0"><Download className="h-4 w-4" /> {m.brochureCta}</a>
+        </div>
+      </Reveal>
     </section>
   );
 }

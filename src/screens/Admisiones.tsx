@@ -15,7 +15,7 @@ export default function Admisiones({ lang = "es" }: { lang?: Locale }) {
   const stepLabel = lang === "en" ? "Step" : "Paso";
   return (
     <>
-      <PageHero eyebrow={d.eyebrow} title={<>{d.titleA}<span className="text-ucm-skyLt">{d.titleB}</span></>} desc={d.desc} />
+      <PageHero image="/img/estudiantes-profesionales.jpg" imageAlt={lang === "en" ? "Working professionals studying at UCM" : "Profesionistas estudiando en UCM"} eyebrow={d.eyebrow} title={<>{d.titleA}<span className="text-ucm-skyLt">{d.titleB}</span></>} desc={d.desc} />
       <section className="container-ucm py-16 sm:py-20">
         <Reveal><h2 className="title-display text-3xl text-ucm-navy sm:text-4xl">{d.pasosTitle}</h2></Reveal>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

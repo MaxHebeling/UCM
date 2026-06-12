@@ -47,6 +47,9 @@ const es = {
     { t: "Presencial", d: "Vive el campus en Tampico con horarios entre semana.", ej: "Campus Tampico" },
   ],
   // FAQ home
+  brochureT: "¿Quieres compartirlo o revisarlo con calma?",
+  brochureD: "Descarga el folleto institucional de UCM con toda la oferta, respaldos y datos de contacto.",
+  brochureCta: "Descargar folleto (PDF)",
   faqEyebrow: "Resuelve tus dudas",
   faqTitle: "Preguntas frecuentes",
   faqs: [
@@ -99,6 +102,9 @@ const en: typeof es = {
     { t: "Online", d: "Study from anywhere with the UCM Platform, at your own pace.", ej: "100% online" },
     { t: "On campus", d: "Experience the Tampico campus with weekday schedules.", ej: "Tampico campus" },
   ],
+  brochureT: "Want to share it or review it at your own pace?",
+  brochureD: "Download UCM's institutional brochure with the full offering, accreditations and contact details.",
+  brochureCta: "Download brochure (PDF)",
   faqEyebrow: "Answers to your questions",
   faqTitle: "Frequently asked questions",
   faqs: [
