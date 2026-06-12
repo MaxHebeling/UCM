@@ -29,6 +29,34 @@ const es = {
     { t: "Cursos", d: "Formación puntual para actualizar conocimientos y herramientas específicas." },
     { t: "Certificaciones", d: "Valida y acredita tus competencias profesionales ante el mercado." },
   ],
+  // Barra de promoción
+  promo: "Inscripciones abiertas · beca de inscripción hasta -50% este mes",
+  promoCta: "Ver becas",
+  // Teaser del claustro en home
+  clEyebrow: "Claustro docente",
+  clTitleA: "Aprende de quienes ", clTitleB: "ejercen, no solo enseñan",
+  clDesc: "Jueces, magistrados, directivos empresariales y especialistas en activo imparten clase en UCM. Aprendes de quienes toman decisiones en el mundo real.",
+  clCta: "Conoce al claustro",
+  // Modalidades
+  modEyebrow: "Modalidades",
+  modTitleA: "Estudia ", modTitleB: "sin dejar de trabajar",
+  modDesc: "Elige el formato que se adapta a tu vida profesional. La misma calidad y validez oficial, a tu ritmo.",
+  modalidades: [
+    { t: "Ejecutiva", d: "Clases en fines de semana, pensadas para quien ya trabaja.", ej: "Sáb 9:00 – 14:00" },
+    { t: "En línea", d: "Estudia desde donde estés con la Plataforma UCM, a tu propio ritmo.", ej: "100% en línea" },
+    { t: "Presencial", d: "Vive el campus en Tampico con horarios entre semana.", ej: "Campus Tampico" },
+  ],
+  // FAQ home
+  faqEyebrow: "Resuelve tus dudas",
+  faqTitle: "Preguntas frecuentes",
+  faqs: [
+    { q: "¿Los programas tienen validez oficial?", a: "Sí. Todos cuentan con Reconocimiento de Validez Oficial de Estudios (RVOE) ante la SEP, y la preparatoria está incorporada a la UAT. Puedes verificarlo en SIRVOES con nuestra clave 28PSU0124A." },
+    { q: "¿Puedo estudiar si ya trabajo?", a: "Sí, es justo para quien trabaja: tenemos modalidad ejecutiva en fines de semana y opciones en línea, con horarios diseñados para profesionales activos." },
+    { q: "¿Cuánto cuesta y hay becas?", a: "La inversión se arma de forma personalizada según el programa. Hay beca de inscripción de hasta 50%, beca en mensualidad y becas empresariales. Pide tu cotización sin compromiso por WhatsApp." },
+    { q: "¿En cuánto tiempo termino?", a: "Las licenciaturas se cursan en 9 cuatrimestres y los posgrados ejecutivos en 5–6 cuatrimestres (aprox. 1 año 8 meses), más rápido que el promedio." },
+    { q: "¿El título sirve para titularme y obtener cédula?", a: "Sí. Al contar con RVOE, puedes titularte y tramitar tu cédula profesional ante la Dirección General de Profesiones de la SEP." },
+    { q: "¿Cómo me inscribo?", a: "Solicita informes por WhatsApp o el formulario; un asesor te guía en el proceso y los requisitos según el programa que elijas." },
+  ],
 };
 
 const en: typeof es = {
@@ -56,6 +84,30 @@ const en: typeof es = {
     { t: "Diploma programs", d: "Specialization in key topics, with a practical, immediately applicable focus." },
     { t: "Courses", d: "Focused training to update specific knowledge and tools." },
     { t: "Certifications", d: "Validate and accredit your professional skills before the market." },
+  ],
+  promo: "Enrollment open · enrollment scholarship up to -50% this month",
+  promoCta: "See scholarships",
+  clEyebrow: "Faculty",
+  clTitleA: "Learn from those who ", clTitleB: "practice, not just teach",
+  clDesc: "Active judges, magistrates, business executives and specialists teach at UCM. You learn from those who make real-world decisions.",
+  clCta: "Meet the faculty",
+  modEyebrow: "Study formats",
+  modTitleA: "Study ", modTitleB: "without pausing your career",
+  modDesc: "Choose the format that fits your professional life. The same quality and official recognition, at your own pace.",
+  modalidades: [
+    { t: "Executive", d: "Weekend classes, designed for those who already work.", ej: "Sat 9:00 AM – 2:00 PM" },
+    { t: "Online", d: "Study from anywhere with the UCM Platform, at your own pace.", ej: "100% online" },
+    { t: "On campus", d: "Experience the Tampico campus with weekday schedules.", ej: "Tampico campus" },
+  ],
+  faqEyebrow: "Answers to your questions",
+  faqTitle: "Frequently asked questions",
+  faqs: [
+    { q: "Are the programs officially recognized?", a: "Yes. They all hold Official Recognition of Studies (RVOE) from the SEP, and the high school is affiliated with UAT. You can verify it in SIRVOES with our code 28PSU0124A." },
+    { q: "Can I study while working?", a: "Yes — it's built for working people: we offer a weekend executive format and online options, with schedules designed for active professionals." },
+    { q: "How much does it cost, and are there scholarships?", a: "The investment is tailored to each program. There's an enrollment scholarship of up to 50%, a monthly-tuition scholarship and corporate scholarships. Request a no-obligation quote via WhatsApp." },
+    { q: "How long does it take to finish?", a: "Bachelor's programs run for 9 quarters and executive graduate programs for 5–6 quarters (about 1 year 8 months) — faster than average." },
+    { q: "Does the degree let me graduate and get a professional license?", a: "Yes. Because it holds RVOE, you can graduate and obtain your professional license (cédula) through the SEP's General Directorate of Professions." },
+    { q: "How do I enroll?", a: "Request information via WhatsApp or the form; an advisor will guide you through the process and requirements for the program you choose." },
   ],
 };
 

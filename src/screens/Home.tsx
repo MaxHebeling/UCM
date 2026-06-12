@@ -11,6 +11,9 @@ import TestimonialMarquee from "@/components/TestimonialMarquee";
 import Diferenciadores from "@/components/Diferenciadores";
 import ProfesionistasBand from "@/components/ProfesionistasBand";
 import OfertaSecundaria from "@/components/OfertaSecundaria";
+import ClaustroTeaser from "@/components/ClaustroTeaser";
+import Modalidades from "@/components/Modalidades";
+import HomeFaq from "@/components/HomeFaq";
 import { inst } from "@/data/site";
 import { getProgramas, getRespaldos, getValores } from "@/i18n/content";
 import { getDict } from "@/i18n/dict";
@@ -97,6 +100,9 @@ export default function Home({ lang = "es" }: { lang?: Locale }) {
       {/* DIFERENCIADORES */}
       <Diferenciadores lang={lang} />
 
+      {/* CLAUSTRO TEASER — caras reales */}
+      <ClaustroTeaser lang={lang} />
+
       {/* QUIZ */}
       <section className="container-ucm pb-4 pt-20 sm:pt-24">
         <Reveal>
@@ -125,6 +131,9 @@ export default function Home({ lang = "es" }: { lang?: Locale }) {
 
       {/* PROFESIONISTAS EN ACTIVO — motivaciones de compra */}
       <ProfesionistasBand lang={lang} />
+
+      {/* MODALIDADES */}
+      <Modalidades lang={lang} />
 
       {/* VALORES / MOTTO */}
       <section className="container-ucm py-20 sm:py-24">
@@ -189,8 +198,11 @@ export default function Home({ lang = "es" }: { lang?: Locale }) {
         </Reveal>
       </section>
 
+      {/* FAQ */}
+      <HomeFaq lang={lang} />
+
       {/* CTA FINAL */}
-      <section className="container-ucm pb-24">
+      <section className="container-ucm pt-20 pb-24 sm:pt-24">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] bg-ucm-gradient px-8 py-16 text-center text-white shadow-glow sm:px-16">
             <div className="absolute inset-0 bg-[radial-gradient(700px_300px_at_50%_-20%,rgba(255,255,255,0.25),transparent)]" />
