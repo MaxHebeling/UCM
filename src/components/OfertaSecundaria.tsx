@@ -31,7 +31,7 @@ export default function OfertaSecundaria({ lang = "es" }: { lang?: Locale }) {
             <h3 className="font-display text-lg font-semibold text-ucm-navy">{m.brochureT}</h3>
             <p className="mt-1 text-sm text-ucm-navy/65">{m.brochureD}</p>
           </div>
-          <a href="/brochure-ucm.pdf" target="_blank" rel="noopener" className="btn-primary shrink-0"><Download className="h-4 w-4" /> {m.brochureCta}</a>
+          <a href={lang === "en" ? "/brochure-ucm-en.pdf" : "/brochure-ucm.pdf"} target="_blank" rel="noopener" className="btn-primary shrink-0"><Download className="h-4 w-4" /> {m.brochureCta}</a>
         </div>
       </Reveal>
     </section>
