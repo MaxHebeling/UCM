@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Home from "@/screens/Home";
 
 export const metadata: Metadata = {
-  title: "University in Tampico | Bachelor's, Master's & High School with RVOE — UCM",
+  title: { absolute: "University in Tampico with RVOE | UCM" },
   description:
     "Universidad Cultural Metropolitana in Tampico: high school, bachelor's, master's and doctoral programs with official SEP recognition (RVOE). Executive, online and on-campus formats. 16 years shaping professionals.",
   alternates: {
     canonical: "/en",
-    languages: { es: "/", en: "/en" },
+    languages: { es: "/", en: "/en", "x-default": "/" },
   },
   openGraph: {
     type: "website",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     siteName: "Universidad Cultural Metropolitana",
     title: "University in Tampico with official SEP recognition — UCM",
     description: "High school, bachelor's, master's and doctoral programs with RVOE. Executive, online and on-campus in Tampico.",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
   },
 };
 

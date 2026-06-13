@@ -12,9 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) return {};
   const desc = `${p.nombre}${p.rvoe ? " with RVOE" : ""} at UCM Tampico. ${p.modalidad}. Request info and learn about scholarships.`;
   return {
-    title: `${p.nombre} in Tampico`,
+    title: { absolute: `${p.nombre} | UCM Tampico` },
     description: desc.length > 158 ? desc.slice(0, 155).trimEnd() + "…" : desc,
-    alternates: { canonical: `/en/oferta/${p.slug}`, languages: { es: `/oferta/${p.slug}`, en: `/en/oferta/${p.slug}` } },
+    alternates: { canonical: `/en/oferta/${p.slug}`, languages: { es: `/oferta/${p.slug}`, en: `/en/oferta/${p.slug}`, "x-default": `/oferta/${p.slug}` } },
   };
 }
 

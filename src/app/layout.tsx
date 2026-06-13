@@ -10,7 +10,7 @@ const display = Fraunces({ subsets: ["latin"], variable: "--font-display", displ
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ucmac.edu.mx"),
   title: {
-    default: "Universidad en Tampico | Licenciaturas, Maestrías y Prepa con RVOE — UCM",
+    default: "Universidad en Tampico | Licenciaturas y Posgrados con RVOE",
     template: "%s | Universidad Cultural Metropolitana",
   },
   description:
@@ -22,8 +22,9 @@ export const metadata: Metadata = {
     siteName: "Universidad Cultural Metropolitana",
     title: "Universidad en Tampico con Validez Oficial SEP — UCM",
     description: "Preparatoria, licenciaturas, maestrías y doctorado con RVOE. Modalidad ejecutiva, en línea y presencial en Tampico.",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
   },
-  alternates: { canonical: "/", languages: { es: "/", en: "/en" } },
+  alternates: { canonical: "/", languages: { es: "/", en: "/en", "x-default": "/" } },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "CollegeOrUniversity",
     name: inst.legal,
     alternateName: ["UCM", "UCM Tampico", "UCMAC"],
+    inLanguage: "es-MX",
     url: "https://www.ucmac.edu.mx",
     logo: "https://www.ucmac.edu.mx/brand/ucm-logo.png",
     slogan: inst.motto,
