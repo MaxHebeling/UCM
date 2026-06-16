@@ -68,7 +68,7 @@ export default function Claustro({ lang = "es" }: { lang?: Locale }) {
               <span className="grid h-12 w-12 place-items-center rounded-2xl bg-ucm-navy text-white"><Briefcase className="h-6 w-6" /></span>
               <div>
                 <span className="eyebrow">{isEn ? "Master's in Executive Management & Business" : "Maestría en Alta Dirección y Administración de Negocios"}</span>
-                <h2 className="title-display text-2xl text-ucm-navy sm:text-3xl">{isEn ? "Executive Management faculty" : <>Claustro de la <span className="text-gradient">MADAN</span></>}</h2>
+                <h2 className="title-display text-2xl text-ucm-navy sm:text-3xl">{isEn ? "Executive Management faculty" : <>Claustro de <span className="text-gradient">Alta Dirección</span></>}</h2>
               </div>
             </div>
           </Reveal>
@@ -76,7 +76,7 @@ export default function Claustro({ lang = "es" }: { lang?: Locale }) {
             {madan.map((d, i) => <DocenteCard key={d.nombre} d={d} delay={i * 0.06} puestoLabel={puestoLabel} />)}
           </div>
           <Reveal className="mt-8">
-            <Link href={lp("/oferta/mba")} className="btn-primary">{isEn ? "Explore the MBA" : "Conoce la MADAN"} <ArrowRight className="h-4 w-4" /></Link>
+            <Link href={lp("/oferta/mba")} className="btn-primary">{isEn ? "Explore the MBA" : "Conoce la Maestría en Alta Dirección"} <ArrowRight className="h-4 w-4" /></Link>
           </Reveal>
         </div>
       </section>

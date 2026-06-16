@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Check, Clock, Laptop, ShieldCheck, Briefcase, BookOpen, ArrowRight, GraduationCap } from "lucide-react";
+import { Check, Clock, Laptop, ShieldCheck, Briefcase, BookOpen, ArrowRight, GraduationCap, Target } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ProgramCard from "@/components/ProgramCard";
@@ -77,6 +77,19 @@ export default function Programa({ slug, lang = "es" }: { slug: string; lang?: L
               <div className="mt-4 flex flex-wrap gap-2">{p.areas.map((a) => <span key={a} className="rounded-full bg-ucm-ice px-4 py-2 text-sm font-medium text-ucm-blueDk">{a}</span>)}</div>
             </Reveal>
           ) : null}
+          {p.competencias?.length ? (
+            <Reveal className="mt-12">
+              <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-ucm-navy"><Target className="h-5 w-5 text-ucm-blue" /> {dp.competencias}</h3>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                {p.competencias.map((co) => (
+                  <div key={co} className="flex items-center gap-2.5 rounded-xl border border-ucm-blue/15 bg-ucm-ice/40 px-4 py-2.5 text-sm font-medium text-ucm-navy">
+                    <span className="h-1.5 w-1.5 rounded-full bg-ucm-blue" /> {co}
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          ) : null}
+
           {p.salidas?.length ? (
             <Reveal className="mt-12">
               <h3 className="flex items-center gap-2 font-display text-xl font-semibold text-ucm-navy"><Briefcase className="h-5 w-5 text-ucm-blue" /> {dp.campo}</h3>

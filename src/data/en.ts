@@ -4,7 +4,7 @@ import type { Programa } from "./site";
 export const statsEN = [
   { value: "234", label: "Graduating generations" },
   { value: "+1,519", label: "Bachelor's, Master's and Doctoral graduates" },
-  { value: "16", label: "Years of educational quality" },
+  { value: "18", label: "Years of educational quality" },
   { value: "+5,840", label: "Cups of coffee" },
 ];
 
@@ -136,7 +136,8 @@ export const programasEN: Programa[] = [
     slug: "maestria-en-juicios-orales", nivel: "Maestría", nombre: "Master's in Oral Trials",
     resumen: "Specialize in the justice system and become an expert in oral litigation: master litigation techniques, legal argumentation and human rights, with a faculty of prominent Judiciary judges.",
     modalidad: "Executive · weekends · Graduate Center", duracion: "6 quarters", rvoe: true, destacado: true,
-    areas: ["Oral litigation", "Legal argumentation", "Human rights", "Adversarial criminal system"],
+    areas: ["Criminal", "Labor", "Commercial", "Civil & Family"],
+    competencias: ["Legal argumentation", "Strategy", "Strategic litigation", "Legal research", "Victimology", "Criminology"],
     beneficios: ["A practical, strategic approach to every stage of the oral trial", "Faculty made up of Judiciary judges", "Weekend format for working professionals", "Corporate scholarships: -50% enrollment and -20% per course"],
   },
   {
@@ -148,7 +149,7 @@ export const programasEN: Programa[] = [
     beneficios: ["A professional portfolio with real projects from the first quarter", "Current industry tools and trends", "Online and weekend format for working professionals", "Official SEP recognition"],
   },
   {
-    slug: "mba", nivel: "MBA", nombre: "MADAN · Master's in Executive Management & Business",
+    slug: "mba", nivel: "MBA", nombre: "Master's in Executive Management & Business",
     resumen: "An executive top-management program with first-rate strategic partners. Shapes business leaders with a global outlook.",
     modalidad: "Executive · online", duracion: "5 quarters", rvoe: true, destacado: true,
     beneficios: ["Strategic business alliances", "Focus on top management", "Executive networking", "Official SEP recognition"],

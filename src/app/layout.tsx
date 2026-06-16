@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Universidad Cultural Metropolitana",
   },
   description:
-    "Universidad Cultural Metropolitana en Tampico: preparatoria, licenciaturas, maestrías y doctorado con Validez Oficial SEP (RVOE). Modalidad ejecutiva, en línea y presencial. 16 años formando profesionales.",
+    "Universidad Cultural Metropolitana en Tampico: preparatoria, licenciaturas, maestrías y doctorado con Validez Oficial SEP (RVOE). Modalidad ejecutiva, en línea y presencial. 18 años formando profesionales.",
   keywords: ["universidad en Tampico", "licenciaturas Tampico", "maestrías en línea", "RVOE", "preparatoria Tampico", "doctorado en educación"],
   openGraph: {
     type: "website",

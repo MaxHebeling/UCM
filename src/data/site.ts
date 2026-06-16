@@ -7,7 +7,7 @@ export const inst = {
   motto: "Honestidad, Cultura y Calidad",
   tagline: "Forma profesionales con conocimiento sólido y valores humanistas.",
   founded: 2009,
-  years: 16,
+  years: 18,
   generations: 234,
   graduates: 1519,
   city: "Tampico, Tamaulipas",
@@ -39,17 +39,16 @@ export const identidad = {
 export const equipo = [
   { area: "Rectoría", tipo: "email", valor: "direccion@ucmac.edu.mx", href: "mailto:direccion@ucmac.edu.mx" },
   { area: "Marketing / Informes", tipo: "whatsapp", valor: "WhatsApp Informes", href: "https://wa.link/z5ue9x" },
-  { area: "Escolares", tipo: "whatsapp", valor: "+52 1 833 437 8855", href: "https://wa.me/+5218334378855" },
-  { area: "Financiero", tipo: "whatsapp", valor: "+52 1 833 446 7901", href: "https://wa.me/+5218334467901" },
+  { area: "Escolares", tipo: "email", valor: "escolares@ucmac.edu.mx", href: "mailto:escolares@ucmac.edu.mx" },
+  { area: "Financiero", tipo: "email", valor: "apoyofinanciero@ucmac.edu.mx", href: "mailto:apoyofinanciero@ucmac.edu.mx" },
   { area: "Coordinación Académica", tipo: "email", valor: "coordinacionta@ucmac.edu.mx", href: "mailto:coordinacionta@ucmac.edu.mx" },
   { area: "Apoyo Académico", tipo: "email", valor: "apoyoacademico@ucmac.edu.mx", href: "mailto:apoyoacademico@ucmac.edu.mx" },
-  { area: "Posgrados Altamira", tipo: "email", valor: "ucmacaltamira@gmail.com", href: "mailto:ucmacaltamira@gmail.com" },
 ];
 
 export const stats = [
   { value: "234", label: "Generaciones de egresados" },
   { value: "+1,519", label: "Licenciados, Masters y Doctores egresados" },
-  { value: "16", label: "Años de calidad en educación" },
+  { value: "18", label: "Años de calidad en educación" },
   { value: "+5,840", label: "Tazas de café" },
 ];
 
@@ -112,6 +111,7 @@ export type Programa = {
   beneficios: string[];
   salidas?: string[];
   areas?: string[];
+  competencias?: string[];
 };
 
 export const programas: Programa[] = [
@@ -253,7 +253,8 @@ export const programas: Programa[] = [
     rvoe: true,
     destacado: true,
     whatsapp: "https://wa.link/hu42dw",
-    areas: ["Litigación oral", "Argumentación jurídica", "Derechos humanos", "Sistema penal acusatorio"],
+    areas: ["Penal", "Laboral", "Mercantil", "Civil y Familiar"],
+    competencias: ["Argumentación jurídica", "Estrategias", "Litigación Estratégica", "Investigación jurídica", "Victimología", "Criminología"],
     beneficios: [
       "Enfoque práctico y estratégico en cada etapa del juicio oral",
       "Claustro docente integrado por jueces del Poder Judicial",
@@ -282,7 +283,7 @@ export const programas: Programa[] = [
   {
     slug: "mba",
     nivel: "MBA",
-    nombre: "MADAN · Maestría en Alta Dirección y Administración de Negocios",
+    nombre: "Maestría en Alta Dirección y Administración de Negocios",
     resumen: "Asume roles directivos y ofrece soluciones efectivas al mundo empresarial: dirección, calidad, gestión estratégica, toma de decisiones, innovación y liderazgo.",
     modalidad: "Ejecutiva · fines de semana",
     duracion: "6 cuatrimestres",
