@@ -54,11 +54,10 @@ export default function Header({ lang = "es" }: { lang?: Locale }) {
         </div>
       )}
       <div className="container-ucm flex h-20 items-center justify-between">
-        <Link href={p("/")} className="flex items-center gap-3">
-          <Image src={onDark ? "/brand/ucm-logo-white.png" : "/brand/ucm-logo.png"} alt="Universidad Cultural Metropolitana" width={52} height={52} className="h-12 w-12 object-contain transition-opacity duration-300" priority />
-          <span className={`hidden text-sm font-bold leading-tight sm:block transition-colors ${onDark ? "text-white" : "text-ucm-navy"}`}>
-            Universidad Cultural<br />
-            <span className={onDark ? "text-ucm-skyLt" : "text-ucm-blue"}>Metropolitana</span>
+        <Link href={p("/")} className="flex items-center gap-3.5">
+          <Image src={onDark ? "/brand/ucm-logo-h-white.png" : "/brand/ucm-logo-h.png"} alt="Universidad Cultural Metropolitana" width={180} height={42} className="h-9 w-auto object-contain transition-opacity duration-300" priority />
+          <span className={`hidden border-l pl-3.5 text-xs font-semibold leading-tight md:block transition-colors ${onDark ? "border-white/25 text-white/90" : "border-ucm-navy/15 text-ucm-navy/80"}`}>
+            Universidad Cultural<br />Metropolitana
           </span>
         </Link>
 
