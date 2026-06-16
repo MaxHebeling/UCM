@@ -4,6 +4,8 @@ import { Check, Clock, Laptop, ShieldCheck, Briefcase, BookOpen, ArrowRight, Gra
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ProgramCard from "@/components/ProgramCard";
+import PlanEstudiosButton from "@/components/PlanEstudiosButton";
+import PonentesCintillo from "@/components/PonentesCintillo";
 import { inst } from "@/data/site";
 import { getProgramas } from "@/i18n/content";
 import { getPages } from "@/i18n/pages";
@@ -122,11 +124,14 @@ export default function Programa({ slug, lang = "es" }: { slug: string; lang?: L
               <p className="mt-1 font-display text-2xl font-bold text-ucm-navy">{dp.becaTitulo}</p>
               <p className="text-xs text-ucm-navy/60">{dp.becaSub}</p>
             </div>
-            <a href={p.whatsapp ?? inst.whatsapp} target="_blank" rel="noopener" className="btn-primary mt-5 w-full"><GraduationCap className="h-5 w-5" /> {c.solicitarInformes}</a>
+            <div className="mt-5"><PlanEstudiosButton programa={p.nombre} lang={lang} /></div>
+            <a href={p.whatsapp ?? inst.whatsapp} target="_blank" rel="noopener" className="btn-primary mt-3 w-full"><GraduationCap className="h-5 w-5" /> {c.solicitarInformes}</a>
             <Link href={lp("/admisiones")} className="btn-ghost mt-3 w-full">{c.verProceso}</Link>
           </div>
         </aside>
       </div>
+
+      {(p.slug === "mba" || p.slug === "maestria-en-juicios-orales") && <PonentesCintillo slug={p.slug} lang={lang} />}
 
       <section className="bg-ucm-ice/60 py-16 sm:py-20">
         <div className="container-ucm">
