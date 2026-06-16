@@ -5,7 +5,7 @@ import { comparativas } from "@/data/comparativas";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://www.ucmac.edu.mx";
   const now = new Date();
-  const routes = ["", "/nosotros", "/oferta", "/claustro-docente", "/admisiones", "/costos-y-becas", "/respaldos", "/contacto", "/comparativa", "/referidos", "/aviso-de-privacidad", "/preparatoria/plan-de-estudios", "/encuentra-tu-programa"];
+  const routes = ["", "/nosotros", "/oferta", "/centro-de-posgrado", "/claustro-docente", "/admisiones", "/costos-y-becas", "/respaldos", "/contacto", "/comparativa", "/referidos", "/aviso-de-privacidad", "/preparatoria/plan-de-estudios", "/encuentra-tu-programa"];
   const progRoutes = programas.map((p) => `/oferta/${p.slug}`);
   const compRoutes = comparativas.map((c) => `/comparativa/${c.slug}`);
   const all = [...routes, ...progRoutes, ...compRoutes];

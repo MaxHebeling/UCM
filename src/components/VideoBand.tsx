@@ -25,7 +25,7 @@ export default function VideoBand({ lang = "es" }: { lang?: Locale }) {
           </h2>
           <p className="mt-5 max-w-xl text-lg text-white/80 [text-align:left]">{d.videoDesc}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href={localePath(lang, "/oferta")} className="btn-white">{d.videoCta} <ArrowRight className="h-4 w-4" /></Link>
+            <Link href={localePath(lang, "/centro-de-posgrado")} className="btn-white">{d.videoCta} <ArrowRight className="h-4 w-4" /></Link>
             <a href={inst.whatsapp} target="_blank" rel="noopener" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">{c.solicitarInformes}</a>
           </div>
         </div>

@@ -14,6 +14,7 @@ export default function Footer({ lang = "es" }: { lang?: Locale }) {
     { label: d.nav.inicio, href: p("/") },
     { label: d.nav.nosotros, href: p("/nosotros") },
     { label: d.nav.oferta, href: p("/oferta") },
+    { label: d.nav.centroPosgrado, href: p("/centro-de-posgrado") },
     { label: d.nav.admisiones, href: p("/admisiones") },
     { label: d.nav.costos, href: p("/costos-y-becas") },
     { label: d.nav.respaldos, href: p("/respaldos") },
